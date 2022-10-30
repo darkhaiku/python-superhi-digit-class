@@ -4,8 +4,11 @@ import shutil
 
 inputs = glob.glob('inputs\*.jpg')
 
+class Digitizer:
+    def __init__(self, filepath) -> None:
+        print(filepath)
+
 os.makedirs('outputs_file', exist_ok=True)
 
 for filepath in inputs:
-    output_path = filepath.replace('inputs', 'outputs_file')
-    shutil.copyfile(filepath, output_path)
+    Digitizer(filepath)
