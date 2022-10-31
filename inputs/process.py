@@ -14,6 +14,9 @@ class Digitizer:
         print("make upside down!")
         self.img = self.img.rotate(180)
 
+    def make_thumbnail_size(self, size=(128, 128)):
+        self.img.thumbnail(size)
+
     def save(self, output_filepath):
         print('This has saved!!!')
         self.img.save(output_filepath)
@@ -25,4 +28,5 @@ for filepath in inputs:
 
     image = Digitizer(filepath)
     image.make_upside_down()
+    image.make_thumbnail_size((200,200))
     image.save(output)
